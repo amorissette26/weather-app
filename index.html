@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="weather-app">
+      <div class="container">
+        <form id="search-text">
+          <div class="row">
+            <div class="mb-3">
+              <div class="row">
+                <div class="col-9">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="City"
+                    id="search-text-input"
+                  />
+                </div>
+                <div class="col-3">
+                  <input type="submit" class="btn btn-primary" value="search" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <h1>New York, NY</h1>
+        <p id="current-time">time</p>
+        <h2>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="partly sunny"
+                />
+                <span class="current-temp">
+                  <span id="temp-now">55 </span><span class="f-temp" id="farenheit">°F  |<a href="#"> </span
+                  ><span class="c-temp" id="celsius">°C </a></span></span
+                >
+              </div>
+
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-6 hi-lo-temp">58°/50°</div>
+                  <ul class="pre-hum-wind">
+                    <li>Precipitation: 0%</li>
+                    <li>Humidity: 42%</li>
+                    <li>Wind: 16 mph</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </h2>
+        <h3>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">Mon</div>
+              <div class="col">Tue</div>
+              <div class="col">Wed</div>
+              <div class="col">Thu</div>
+              <div class="col">Fri</div>
+            </div>
+            <div class="row">
+              <div class="col emoji-mon">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="partly sunny"
+                />
+              </div>
+              <div class="col emoji-tue">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="partly sunny"
+                />
+              </div>
+              <div class="col emoji-wed">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="partly sunny"
+                />
+              </div>
+              <div class="col emoji-thu">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="partly sunny"
+                />
+              </div>
+              <div class="col emoji-fri">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="partly sunny"
+                />
+              </div>
+            </div>
+            <h4>
+              <div class="row weekly-temps">
+                <div class="col">49°/36°</div>
+                <div class="col">52°/38°</div>
+                <div class="col">38°/32°</div>
+                <div class="col">38°/30°</div>
+                <div class="col">50°/38°</div>
+              </div>
+            </h4>
+          </div>
+        </h3>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
