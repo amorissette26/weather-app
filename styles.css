@@ -135,8 +135,8 @@ a {
 }
 
 .github-link {
-  margin-top: 15px;
-  font-size: 12px;
+  margin-top: 25px;
+  font-size: 16px;
   text-align: left;
   color: black;
 }
@@ -147,4 +147,7 @@ a {
 .github-link-text:visited {
   color: purple;
   text-decoration: underline;
+}
+.clickable-text {
+  color: blue;
 }
