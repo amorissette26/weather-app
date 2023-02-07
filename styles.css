@@ -133,3 +133,16 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.github-link {
+  font-size: 14px;
+  text-align: left;
+}
+
+.github-link-text:link {
+  color: blue;
+}
+.github-link-text:visited {
+  color: purple;
+  text-decoration: underline;
+}
