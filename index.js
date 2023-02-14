@@ -46,3 +46,5 @@ function searchForCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 }
+let weatherIcon = document.querySelector("#weather-icon");
+weatherIcon.setAttribute("src", "https://openweathermap.org/img/wn/10d@2x.png");
