@@ -47,4 +47,7 @@ function searchForCity(event) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/10d@2x.png`);
+weatherIcon.setAttribute(
+  "src",
+  `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+);
