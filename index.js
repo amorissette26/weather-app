@@ -33,6 +33,7 @@ let form = document.querySelector("#search-text");
 form.addEventListener("submit", searchForCity);
 
 function displayWeather(response) {
+  console.log(response);
   document.querySelector("#temp-now").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -47,7 +48,4 @@ function searchForCity(event) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-weatherIcon.setAttribute(
-  "src",
-  `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-);
+weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/10d@2x.png`);
