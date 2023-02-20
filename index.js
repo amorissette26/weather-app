@@ -28,7 +28,7 @@ function search(event) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${searchInput.value}`;
 }
-let weatherIcon = document.querySelector("#weather-icon");
+
 let form = document.querySelector("#search-text");
 form.addEventListener("submit", searchForCity);
 
@@ -38,14 +38,19 @@ function displayWeather(response) {
     response.data.main.temp
   );
   document.querySelector("h1").innerHTML = response.data.name;
+
+  let weatherIcon = document.querySelector("#weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchForCity(event) {
   event.preventDefault();
+  console.log(apiKey);
   let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
   let city = document.querySelector("#search-text-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 }
-
-weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/10d@2x.png`);
