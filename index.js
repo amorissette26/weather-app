@@ -38,6 +38,11 @@ function displayWeather(response) {
     response.data.main.temp
   );
   document.querySelector("h1").innerHTML = response.data.name;
+  let iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchForCity(event) {
@@ -47,8 +52,3 @@ function searchForCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 }
-
-iconElement.setAttribute(
-  "src",
-  `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-);
