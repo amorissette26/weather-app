@@ -38,8 +38,9 @@
             </div>
           </div>
         </form>
-        <h1>New York, NY</h1>
+        <h1></h1>
         <p id="current-time">time</p>
+        <p id="description"></p>
         <h2>
           <div class="container text-center">
             <div class="row">
@@ -50,18 +51,17 @@
                   id="weather-icon"
                 />
                 <span class="current-temp">
-                  <span id="temp-now">55 </span><span class="f-temp" id="farenheit">°F  |<a href="#"> </span
+                  <span id="temp-now"> </span><span class="f-temp" id="farenheit">°F  |<a href="#"> </span
                   ><span class="c-temp" id="celsius">°C </a></span></span
                 >
               </div>
 
               <div class="col-6">
                 <div class="row">
-                  <div class="col-6 hi-lo-temp">58°/50°</div>
+                  <div class="col-6 hi-lo-temp"><span id="temp-hi"></span>° <span id="temp-lo"></span>°</div>
                   <ul class="pre-hum-wind">
-                    <li>Precipitation: 0%</li>
-                    <li>Humidity: 42%</li>
-                    <li>Wind: 16 mph</li>
+                    <li> Humidity: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> mph</li>
                   </ul>
                 </div>
               </div>

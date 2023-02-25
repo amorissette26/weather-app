@@ -151,3 +151,9 @@ a {
 .clickable-text {
   color: blue;
 }
+
+#description {
+  top: -50px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
