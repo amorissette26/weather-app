@@ -62,3 +62,14 @@ function searchForCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 }
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let celsiusTemp = ((81 - 32) * 5) / 9;
+}
+
+let celsiusLink = document.querySelector("celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+let farenheitLink = document.querySelector("#farenheit");
+farenheitLink.addEventListener("click", displayFarenheitTemp);
