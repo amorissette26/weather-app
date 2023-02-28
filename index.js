@@ -32,8 +32,11 @@ let iconElement = document.querySelector("#weather-icon");
 let form = document.querySelector("#search-text");
 form.addEventListener("submit", searchForCity);
 
+let fahrenheitTemp = null;
+
 function displayWeather(response) {
   console.log(response);
+  fahrenheitTemp = Math.round(response.data.main.temp);
   document.querySelector("#temp-now").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -63,12 +66,18 @@ function searchForCity(event) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-function displayCelsiusTemp(event) {
+function displayFarenheitTemp(event) {
   event.preventDefault();
-  let celsiusTemp = ((81 - 32) * 5) / 9;
+  document.querySelector("#temp-now").innerHTML = fahrenheitTemp;
 }
 
-let celsiusLink = document.querySelector("celsius");
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let celsius = ((fahrenheitTemp - 32) * 5) / 9;
+  document.querySelector("#temp-now").innerHTML = Math.round(celsius);
+}
+
+let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let farenheitLink = document.querySelector("#farenheit");
