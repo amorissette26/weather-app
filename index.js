@@ -60,11 +60,17 @@ function displayWeather(response) {
 
 function searchForCity(event) {
   event.preventDefault();
-  let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
   let city = document.querySelector("#search-text-input").value;
+  searchCity(city);
+}
+
+function searchCity(city) {
+  let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 }
+
+searchCity("New York");
 
 function displayFarenheitTemp(event) {
   event.preventDefault();
