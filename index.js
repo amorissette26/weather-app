@@ -34,6 +34,13 @@ form.addEventListener("submit", searchForCity);
 
 let fahrenheitTemp = null;
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "c819171fe0abdc14039af4ef5dda283b";
+  let apiUrl = `api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  console.log(apiUrl);
+}
+
 function displayWeather(response) {
   console.log(response);
   fahrenheitTemp = Math.round(response.data.main.temp);
@@ -56,6 +63,10 @@ function displayWeather(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   tempHiElement.innerHTML = Math.round(response.data.main.temp_max);
   tempLowElement.innerHTML = Math.round(response.data.main.temp_min);
+  let monMaxTemp = document.querySelector("#mon-max");
+  monMaxTemp.innerHTML = response.data.main.humidity;
+
+  getForecast(response.data.coord);
 }
 
 function searchForCity(event) {
