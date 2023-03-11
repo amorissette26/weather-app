@@ -37,7 +37,7 @@ let fahrenheitTemp = null;
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "c819171fe0abdc14039af4ef5dda283b";
-  let apiUrl = `api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
   console.log(apiUrl);
 }
 
