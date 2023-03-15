@@ -58,7 +58,7 @@
 
               <div class="col-6">
                 <div class="row">
-                  <div class="col-6 hi-lo-temp"><span id="temp-hi"></span>° <span id="temp-lo"></span>°</div>
+                  <div class="col-6 hi-lo-temp"><span id="temp-hi"></span>° / <span id="temp-lo"></span>°</div>
                   <ul class="pre-hum-wind">
                     <li> Humidity: <span id="humidity"></span>%</li>
                     <li>Wind: <span id="wind"></span> mph</li>
@@ -68,58 +68,14 @@
             </div>
           </div>
         </h2>
-        <h3>
-          <div class="container text-center">
-            <div class="row">
-              <div class="col">Mon</div>
-              <div class="col">Tue</div>
-              <div class="col">Wed</div>
-              <div class="col">Thu</div>
-              <div class="col">Fri</div>
+       <div class="weather-forecast" id="forecast">
+        <div class="row">
+            <div class="col-1">
+            Tue<img src="https://openweathermap.org/img/wn/50n@2x.png" alt="" width="42" id="forecast-icon"/>
+          42°<span id="weather-forecast-low">36°</span>
             </div>
-            <div class="row">
-              <div class="col emoji-mon">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="partly sunny"
-                />
-              </div>
-              <div class="col emoji-tue">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                  alt="partly sunny"
-                />
-              </div>
-              <div class="col emoji-wed">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="partly sunny"
-                />
-              </div>
-              <div class="col emoji-thu">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="partly sunny"
-                />
-              </div>
-              <div class="col emoji-fri">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                  alt="partly sunny"
-                />
-              </div>
-            </div>
-            <h4>
-              <div class="row weekly-temps">
-                <div class="col"><span id="mon-max">°</span>/36°</div>
-                <div class="col">52°/38°</div>
-                <div class="col">38°/32°</div>
-                <div class="col">38°/30°</div>
-                <div class="col">50°/38°</div>
-              </div>
-            </h4>
-          </div>
-        </h3>
+        </div>
+     </div>
       </div>
     </div>
      <p class="github-link"> 

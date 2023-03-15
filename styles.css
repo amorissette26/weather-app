@@ -39,7 +39,7 @@ h4 {
 .hi-lo-temp {
   font-size: 34px;
   position: relative;
-  left: -152px;
+  left: -130px;
   bottom: -40px;
 }
 .emoji-mon {
@@ -81,6 +81,7 @@ h4 {
 }
 .hi-lo-text {
   font-size: 24px;
+  color: red;
 }
 .current-temp {
   color: black;
@@ -156,4 +157,21 @@ a {
   top: -50px;
   font-size: 20px;
   text-transform: capitalize;
+}
+
+.weather-forecast {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 36px;
+  left: 50px;
+  margin-top: -20px;
+}
+#weather-forecast-low {
+  opacity: 0.6;
+}
+
+#forecast-icon {
+  position: relative;
+  left: -10px;
 }

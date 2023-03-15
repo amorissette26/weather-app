@@ -21,6 +21,25 @@ let days = [
 let day = days[now.getDay()];
 p.innerHTML = `${day},  ${hour}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class= "row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="weather-forecast" id="forecast">
+            <div class="col-1">
+            ${day}<img src="https://openweathermap.org/img/wn/50n@2x.png" alt="" width="42" id="forecast-icon"/>
+          42°<span id="weather-forecast-low">36°</span>
+            </div>     
+     </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text-input");
@@ -37,7 +56,7 @@ let fahrenheitTemp = null;
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "c819171fe0abdc14039af4ef5dda283b";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
   console.log(apiUrl);
 }
 
@@ -99,3 +118,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let farenheitLink = document.querySelector("#farenheit");
 farenheitLink.addEventListener("click", displayFarenheitTemp);
+
+displayForecast();
