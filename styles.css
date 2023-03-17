@@ -21,6 +21,7 @@ h1 {
 }
 h2 {
   font-size: 75px;
+  margin-top: -40px;
   margin-bottom: 60px;
   color: rgb(153, 154, 155);
   font-family: Roboto, arial, sans-serif;
@@ -76,7 +77,7 @@ h4 {
 .weather-app {
   border: solid rgb(175, 174, 174) 2px;
   border-radius: 10px;
-  max-width: 900px;
+  max-width: 1500px;
   margin: 20px;
 }
 .hi-lo-text {
@@ -166,6 +167,7 @@ a {
   margin-bottom: 36px;
   left: 50px;
   margin-top: -20px;
+  margin-right: 30px;
 }
 #weather-forecast-low {
   opacity: 0.6;

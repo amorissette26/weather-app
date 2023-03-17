@@ -21,19 +21,34 @@ let days = [
 let day = days[now.getDay()];
 p.innerHTML = `${day},  ${hour}:${minutes}`;
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  console.log(response);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class= "row">`;
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
-      `<div class="weather-forecast" id="forecast">
-            <div class="col-1">
-            ${day}<img src="https://openweathermap.org/img/wn/50n@2x.png" alt="" width="42" id="forecast-icon"/>
-          42°<span id="weather-forecast-low">36°</span>
-            </div>     
-     </div>`;
+      `<div class="col">
+          <div>${formatDay(forecastDay.dt)}</div>
+          <img src="https://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png" alt="" width="42" id="forecast-icon"/>
+          <div>${Math.round(
+            forecastDay.temp.max
+          )}°<span id="weather-forecast-low">${Math.round(
+        forecastDay.temp.min
+      )}°</span></div>
+        </div>`;
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -54,10 +69,9 @@ form.addEventListener("submit", searchForCity);
 let fahrenheitTemp = null;
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "c819171fe0abdc14039af4ef5dda283b";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
-  console.log(apiUrl);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeather(response) {
@@ -82,9 +96,6 @@ function displayWeather(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   tempHiElement.innerHTML = Math.round(response.data.main.temp_max);
   tempLowElement.innerHTML = Math.round(response.data.main.temp_min);
-  let monMaxTemp = document.querySelector("#mon-max");
-  monMaxTemp.innerHTML = response.data.main.humidity;
-
   getForecast(response.data.coord);
 }
 
